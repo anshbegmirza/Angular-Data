@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Assignment-3</h1>
+      <hr>
+      <h3>Do the following : </h3>
+      <hr>
+      <ol>
+        <li>
+          Add a button which says "Display Details"
+        </li>
+        <li>Add a paragraph with any content of your choice (e.g 'Secret Password = tuna')</li>
+        <li>
+          Toggle the displaying of that paragraph with the button created in the first step.
+        </li>
+        <li>Log all button clicks in an array and output that array below the secret paragraph (maybe a log a timestamp
+          or simply an incrementing number) </li>
+        <li>Starting at the 5th log then, give all the future log items a blue background(via ngStyle) and white
+          color(ngClass)</li>
+      </ol>
+      <hr>
+      <h2>Solution :</h2>
+      <hr>
+      <button class="btn btn-primary" (click)="showSecret=!showSecret ">Display details</button>
+      <p>Secret Password = tune</p>
+    </div>
+  </div>
+</div>

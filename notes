@@ -1,0 +1,151 @@
+---
+
+                                  ***** FOLDER 32 *****
+                                         TypeScript
+
+---
+
+Date 23 Jan 25
+Watched all the video and learned the basic of tsc
+how to specifiy types generics, interface and classes in tsc
+
+---
+
+                                  ***** FOLDER 1 *****
+                                      Getting Started
+
+---
+
+Date 23 Jan 25
+Watched video from 1 to 7.
+-- Learned what angular is. Angular 2 vs angular and previous versions.
+-- Install angular and cli on my pc.
+-- Created first app of angular.
+
+Date 24 Jan 25
+Watched videos from 8 to 12 8. Editing the First App
+Learned how we can import modules from the angular modules package
+Creatad a simple field which will take import and then display it on the screen.
+
+9. The Course Structure
+   All the individual things we are going to learn
+   Getting Started
+   The basics
+   Componets & Databinding
+   Directives
+   Services and Dependices
+   and much more
+
+10. How to get the Most out of the Course
+    How we can utilise this course to its fullest.
+
+11. What is TypeScript
+    What typescript is how it works
+
+12. A Basic Project Setup using Bootstrap for Styling
+    Installed bootstrap on the project locally
+
+npm install --save bootstrap@3
+
+---
+
+                                  ***** FOLDER 2 *****
+                                      The Basics
+
+---
+
+Date 24 Jan 2025
+Watched videos from 1 to 13
+
+2.1. Module Introduction
+-- What modules are and how they work in combining to the final product.
+
+2.2. How an Angular App gets Loaded and Started
+-- How the final app is loaded from the root app components and all the style sheets are added to it and the typescript is converted to javascript.
+
+2.3. Components are Important!
+-- Angular in the end is a JS framework, changing your DOM("HTML") at runtime !
+-- Components are subparts of a main page they might have their own html, css styling and JS.
+-- Also the main benefit of components is that they have their own business logic meaning we can use a component multiple times.
+
+2.4. Creating a New Component
+-- name your folders the same as the component name
+-- so in simple terms a component is nothing but a tsc class.
+
+-- To create a component you have to make a folder in the app, name it the same as the component name then create its typescript file and html file.
+
+-- import the required modules and decorate it using component from angular/converted
+
+2.5. Understanding the Role of AppModule and Component Declaration
+-- Creating the component is just not enough. We have to import it in the app.module.ts
+-- add it under the declarations and import it in the top.
+
+2.6. Using Custom Components
+-- in the app.component.html add our new component that is (app-server to it)
+
+2.7. Creating Components with the CLI & Nesting Components
+-- Added multiple components into one component (nesting I mean)
+
+2.8. Working with Component Templates
+-- If the html code is lesser like only 2 lines we can use a template instead of templateURL.
+
+2.9. Working with Component Styles
+-- We can give multi lines of css to the styles tag in (app.componenet.ts.).
+.
+
+2.10.Fully Understanding the Component Selector 11 and 12
+-- Created some 2 components, added them in the app componenet.
+
+2.13 What is Databinding
+-- Using databinding to display on our componenets.
+-- In simple communication between your typescript code and template html
+
+2.14. String Interpolation
+-- After the string interpolation a string is returned in the end.
+
+2.15. Property Binding
+-- Using it we can change the state of buttons and other things on runtime using function from js
+
+2.16. Property Binding vs String Interpolation
+--Dont mix the two
+-- practice will make u realise which one to use when
+
+2.17. Event Binding
+-- So we cab bind the event on any element using any property we want which leaves us with a pretty huge scope of creating interesting websites and applications.
+(input)="onUpdateServerName()" this how you can do event binding.
+2.18 Read that small para to understand when and how we can bind events
+
+2.19. Passing and Using Data with Event Binding
+(input)="onUpdateServerName($event)
+$event is a special reserved keyword which on action gives us the event obj that just happened.
+
+2.21. Two-Way-Databinding
+-- In two way data binding we use property binding and event binding both together.
+--Like this
+-- [(ngModel)]="serverName"
+
+2.22. Combining all Forms of Databinding
+-- Combined all the form of data binding and made the button activated with a text printing below it.
+
+2.23 & 2.24. [OPTIONAL] Assignment Solution
+Completed this task 🏴‍☠️
+
+2.25. Understanding Directives
+--Directives are instructions in the DOM!
+--Components are also directives.
+
+2.26. Using ngIf to Output Data Conditionally
+-- Structural directive use to conditional set things on elements using methods or any thing which returns a true or false statement.
+-- \*ngIf="serverCreated"
+
+2.27. Enhancing ngIf with an Else Condition
+
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+<ng-template #noServer>
+  <p>No server was created.</p>
+</ng-template>
+
+Understand the concept of ngIf and else using the above ode in the servers.component.html and its tsc file.
+
+2.28. Styling Elements Dynamically with ngStyle
+Using ngStyle directive we can change the style of an element conditionally.
