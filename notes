@@ -1,20 +1,20 @@
----
+=====================================================================================
 
                                   ***** FOLDER 32 *****
                                          TypeScript
 
----
+=====================================================================================
 
 Date 23 Jan 25
 Watched all the video and learned the basic of tsc
 how to specifiy types generics, interface and classes in tsc
 
----
+=====================================================================================
 
                                   ***** FOLDER 1 *****
                                       Getting Started
 
----
+=====================================================================================
 
 Date 23 Jan 25
 Watched video from 1 to 7.
@@ -47,12 +47,12 @@ Creatad a simple field which will take import and then display it on the screen.
 
 npm install --save bootstrap@3
 
----
+=====================================================================================
 
                                   ***** FOLDER 2 *****
                                       The Basics
 
----
+=====================================================================================
 
 Date 24 Jan 2025
 Watched videos from 1 to 13
@@ -146,6 +146,76 @@ Completed this task 🏴‍☠️
 </ng-template>
 
 Understand the concept of ngIf and else using the above ode in the servers.component.html and its tsc file.
+27th January, 2025
 
 2.28. Styling Elements Dynamically with ngStyle
-Using ngStyle directive we can change the style of an element conditionally.
+--Using ngStyle directive we can change the style of an element conditionally.
+
+2.29. Applying CSS Classes Dynamically with ngClass
+--To add dynamically add and remove classes.
+We can use it to add css classes using conditions
+
+[ngClass]="{online:serverStatus==='online'}
+
+online is the class name which we want to add
+and the serverStatus is the condition cherker.
+
+2.30. Outputting Lists with ngFor
+
+--We use an ng for loop to output the server list on button clicks.
+
+2.32. [OPTIONAL] Assignment Solution
+--Please view the assignment-3 solution for the solution of the task given.
+
+2.33. Getting the Index when using ngFor
+--Using two ngFor loops one to get the data, and the other to get the index.
+
+=====================================================================================
+
+                                  ***** FOLDER 3 *****
+                                Course Project - The Basics
+
+=====================================================================================
+
+3.1.Project Introduction
+-- Understood what the project is all about.
+
+3.2. Planning the App
+-- Planned the project, created some features and components that we might requrie, also some models to store the data in a specific formate.
+
+3.4. Setting up the Application
+-- Created a new project using ng new and installed bootstrap 3 in it.
+
+3.5. Creating the Components
+-- Created multiple componenets inside components, using angular CLI (command line interface).
+
+3.6. Using the Components
+-- Added some dummy data and dummy styling to the components we created previously
+
+3.7. Adding a Navigation Bar
+-- Added a simple header nav to the project.
+
+3.8 Made it responsive and converted it to a hamburger menu.
+
+3.9. Creating a Recipe Model
+-- We created a recipe model (a js class) which will store all the data in a specific formate.
+
+-- it is similar to the questios model or recipe model we had in mvc architecture.
+
+3.10. Adding Content to the Recipes Components
+-- Added single recipe item data into the recipe list, also created a model to store recipe. Added a recipe array to that model to store multiple data.
+
+3.11. Outputting a List of Recipes with ngFor
+-- Created simple cards to hold the recipes details.
+
+3.12. Displaying Recipe Details
+-- Displayed the recipe details on the right side.
+
+3.13. Working on the ShoppingListComponent
+-- Created a simple shopping list componenet design and implemented it.
+
+3.14. Creating an Ingredient Model
+-- Created a simple model to store the ingredients data into it.
+
+3.15. Creating and Outputting the Shopping List
+--

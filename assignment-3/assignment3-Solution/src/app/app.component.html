@@ -21,8 +21,28 @@
       <hr>
       <h2>Solution :</h2>
       <hr>
-      <button class="btn btn-primary" (click)="showSecret=!showSecret ">Display details</button>
-      <p>Secret Password = tune</p>
+      <!-- <button class="btn btn-primary" (click)="showSecret=!showSecret ">Display details</button> -->
+      <button class="btn btn-primary" (click)="onToggleDetails()">Display details</button>
+      <p *ngIf="showSecret">Secret Password = tune</p>
+      <!-- <div *ngFor="let logItem of log"
+        [ngStyle]="{'background-color':logItem>=5?'blue':'transparent',
+        
+         'color':logItem>=5 ?'white':'black'}
+        
+        ">
+        {{logItem}}
+      </div> -->
+
+      <!-- <div *ngFor="let logItem of log" [ngStyle]="{'background-color':logItem>=5?'blue':'transparent'}"
+        [ngClass]="logItem>=5?'white-text-color':''">
+        {{logItem}}
+      </div> -->
+
+      <div *ngFor="let logItem of log; let i = index" [ngStyle]="{'background-color':i>=4?'blue':'transparent'}"
+        [ngClass]="i>=4?'white-text-color':''">
+        {{logItem}}
+      </div>
+
     </div>
   </div>
 </div>
