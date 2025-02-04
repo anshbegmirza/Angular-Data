@@ -1,7 +1,15 @@
 ===========================================================================================
 
 Angular Test
-After folder - 3, 6, 8, 10, 14, 16, 17, 20
+After folder - 3(1), 6(2), 8(3), 10(4), 14(5), 16(6), 17(7), 20(8), 9 , 10 , 11, 12, 13.
+
+Test Completed
+1 :
+2 :
+3 :
+4 :
+5 :50mins
+
 ===========================================================================================
 
 ===========================================================================================
@@ -139,6 +147,9 @@ Completed this task 🏴‍☠️
 2.25. Understanding Directives
 --Directives are instructions in the DOM!
 --Components are also directives.
+
+-- REfer to this for more about directives:
+https://v17.angular.io/api?type=directive
 
 2.26. Using ngIf to Output Data Conditionally
 -- Structural directive use to conditional set things on elements using methods or any thing which returns a true or false statement.
@@ -443,4 +454,423 @@ https://v17.angular.io/api/core/Renderer2
 ===========================================================================================
 
 9.1. Module Introduction
+-- Learned about what a service is and what a dependency is.
+
+9.2. Why would you Need Services
+-- Understood why we need services
+
+-- Created new folder for this section, and added its starter code to it.
+
+9.3. Creating a Logging Service
+-- Created a custom service which will log some status to the console.
+
+9.4. Injecting the Logging Service into Components
+
+-- Ok so a service is nothing but some reusable js class having certain functionality to it.
+
+-- a dependency injector is a tool of angular cli which will directly instantiate a new object out of class and add it to the component we want.
+
+-- this is what a dependency and service is in short.
+
+private loggingService: LoggingService
+loggingService is the custom name that we can assign as we want.
+the type is the same name as of class name.
+
+9.5. Creating a Data Service
+-- Created a account service named service to get data and inject it in components.
+
+9.6. Understanding the Hierarchical Injector
+
+--
+
+===========================================================================================
+
+                                  ***** FOLDER 11 *****
+                                 Changing Pages with Routing
+
+===========================================================================================
+
+11.1. Module Introduction
+-- what this module is going to contain.
+
+11.2. Why do we need a Router
+-- In Angular, a router is a built-in module that enables navigation between different components or views in a Single Page Application (SPA) without requiring a full page reload.
+
+11.4. Setting up and Loading Routes
+-- So we import the routes, and the routerModule in the app module. define it like this : const appRoutes: Routes = [
+{ path: "", component: HomeComponent },
+{ path: `users`, component: UsersComponent },
+{ path: `servers`, component: ServersComponent },
+];
+
+-- then we import it :
+imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+
+11.5. Navigating with Router Links
+-- We can use routerLink in the a tag to seamlessly change page with the help of the router.
+-- refer to the below example for more information.
+
+<li role="presentation"><a routerLink="/users">Users</a></li>
+
+11.6. Understanding Navigation Paths
+-- We can route to the same page using routerLinks like the one mentioned below:
+
+    <a href="" routerLink="../servers">Reload Page</a>
+
+11.7. Styling Active Router Links
+
+-- Use routerLinkActive to set css styles dynamically.
+
+-- Using routerLinkActiveOptions with property binding we can dynamically set the css styles on the element we want and check them also.
+
+11.8. Navigating Programmatically
+-- So we can use event binding to route to things using router.
+// refer to this code in the home.component.ts file.
+onLoadServers() {
+// complex calculation
+// return "This is a complex calculation
+this.router.navigate(["/servers"]);
+}
+
+11.9. Using Relative Paths in Programmatic Navigation
+-- We can use this method to change the pages, also navigate it.
+
+onReload() {
+// this.router.navigate(["/servers"], { relativeTo: this.route });
+}
+
+11.10. Passing Parameters to Routes
+-- So we did this that is we can load a single user.
+-- REfer to this code please:{ path: `users/:id`, component: UserComponent },
+
+11.11. Fetching Route Parameters
+
+-- THis route: ActivatedRoute gives us a lot of information for the users that we require like id and name and all.
+
+11.12. Fetching Route Parameters Reactively
+
+-- Params hold the properties that you define in the router.
+
+-- Using the below code we can easily change the data on clicks when we are in a component.
+
+this.route.params.subscribe((params: Params) => {
+this.user.id = params["id"];
+this.user.name = params["name"];
+});
+
+11.13. An Important Note about Route Observables
+
+-- So basically when we add a subscription thing to our app we have to destroy it.
+
+11.14. Passing Query Parameters and Fragments
+-- We can use router to get the id and params plus the fragments dynamically.
+
+11.15. Retrieving Query Parameters and Fragments
+-- In this lecture we learn how to retrive data from the url.
+-- console.log(this.route.snapshot.queryParams);
+-- console.log(this.route.snapshot.fragment);
+
+11.16. Practicing and some Common Gotchas
+-- So we basically fetched or retrieved the data using the snapshot on route params.
+
+-- then used it to show the status of our servers.
+
+11.17. Setting up Child (Nested) Routes
+
+-- This is what a normal child routing looks like.
+{
+path: `users`,
+component: UsersComponent,
+children: [{ path: `:id/:name`, component: UserComponent }],
+}
+
+11.18. Using Query Parameters - Practice
+-- So we did this small change in the allowedit part of the servers component.
+-- refer to this piece of code : this.allowEdit = queryParams["allowEdit"] === "1" ? `true` : `false`;
+
+11.19. Configuring the Handling of Query Parameters
+-- queryParamsHandling: "preserve",
+add this line to the query handlining js object we are working to preserve the ongoing query parameters.
+
+11.20. Redirecting and Wildcard Routes
+-- { path: "not-found", component: PageNotFoundComponent },
+{ path: "\*\*", redirectTo: "/not-found" },
+
+-- So the double astrisk route will manage all the possibilites of routes which are not present on the app, and redirect them to the not found page.
+
+11.22. Outsourcing the Route Configuration
+
+-- Create a external file to outsource our routing modules into a seperate modules, and import them back in the main app module ts file.
+
+-- this way we can keep our whole architecture clean and simple.
+
+11.23. An Introduction to Guards
+-- so basically talks about how we can actually safeguard our routes.
+-- use canActivate
+
+11.24. Protecting Routes with canActivate
+
+-- We can safe guard the routes using the auth guard service and a sepearte service to handle the promise
+use it with canActivate on the route which you want to
+
+11.25. Protecting Child (Nested) Routes with canActivateChild
+-- we can also use canActivateChild to just protect the child routes and not the parent using it in the auth guard service that we can created prior.
+
+11.26. Using a Fake Auth Service
+-- we created a simple login in thing and logout thing using boolean that we had predefined in the authservice, used them on the home page and redirected the user to access the servers components if he is logged in.
+
+11.27. Controlling Navigation with canDeactivate
+-- Interface: a contract which we can be imported by some other class.
+-- So with routing control we can activate and deactivate things whenever we want to, like we can basically change things depending on query params and so on.
+
+11.28. Passing Static Data to a Route
+-- To pass on some static data we use the data property on the route and then use it further in the component that we need !
+
+11.29. Resolving Dynamic Data with the resolve Guard
+-- What is an Observable ?
+Ans: An Observable in Angular is a feature from RxJS (Reactive Extensions for JavaScript) that allows handling asynchronous data streams efficiently. It is widely used for handling HTTP requests, user input events, and real-time data updates.
+
+11.30. Understanding Location Strategies
+-- Practice more routing, like create your own components and route them.
+
+===========================================================================================
+
+                                  ***** FOLDER 12. *****
+                                Course Project - Routing
+
+===========================================================================================
+
+12.1. Planning the General Structure
+-- We planned the general overview how we are going to make the things work.
+
+12.2. Setting Up Routes
+-- So we set up the routes in the appRouting Module and imported it in the app modules.
+
+12.3. Adding Navigation to the App
+-- Added the navigation via header in the routerLink and also set up active styling stuff.
+
+12.4. Marking Active Routes
+-- So removed the page reloads thing for the shopping-list and set up a active link to it.
+
+12.5. Fixing Page Reload Issues.mp4
+-- Fixed some page reload issues.
+
+12.6. Child Routes Challenge
+-- So basically we have created a array of recipes, which will store them, and now we want it to display them using those array indexes.
+
+12.7. Adding Child Routing Together
+-- So we added a new component named Recipe-Start and added a simple h3 tag intro text, will further use it.
+
+12.8. Configuring Route Parameters
+-- We used route snapshot to fetch ids and then use them to get new recipes.
+
+12.9. Passing Dynamic Parameters to Links
+-- Used array index to show recipes as we get them.
+
+12.10. Styling Active Recipe Items
+-- We added a active css class to it using routerLinkActive = active (bootstrap class).
+
+12.11. Adding Editing Routes
+-- Completed adding editing routes thing, created a new component and added it.
+
+12.12. Retrieving Route Parameters
+-- So we can retrive the params from the route using the subscribe method on the params.
+
+12.13. Programmatic Navigation to the Edit Page
+-- We made the nav panel work again on editing the page and fit the missing piece of the jigsaw puzzle.
+
+12.14. One Note about Route Observables
+-- While working with our own observables, we have to remove the subscribe method and do the clean up work.
+
+===========================================================================================
+
+                                  ***** FOLDER 13. *****
+                                 Understanding Observables
+
+===========================================================================================
+
+13.1
+Observable : User input events, Http Requests, Triggered in Code, ...
+So the observable is nothing but a tool kindof which tracks the changes in the data it has been marked on.
+
+13.2. Analyzing Angular Observables
+
+13.3. Getting Closer to the Core of Observables
+-- created a simple observable using the interval method provided by the rxJS.
+
+13.4. Building a Custom Observable
+-- Created a custom observable named customIntervalObservable, please refer to it. its a interval observer.
+
+13.5. Errors & Completion
+-- So the we can use functions like complete, next, error etc on it.
+
+13.6. Observables & You!
+-- SO the observables work under the hood like completing smaller tasks and reporting the errors.
+
+13.7. Understanding Operators
+-- We can import tons of operators from the Rx Js library and use em in our project as we like.
+
+13.8. Subjects
+-- Subjects are quite similar to event emitters, they work in the same way.
+
+===========================================================================================
+
+                                  ***** FOLDER 14. *****
+                                Course Project - Observables
+
+===========================================================================================
+
+14.1. Improving the Reactive Service with Observables (Subjects)
+Removed the event emitter thing from the recipe componet and added the subject thing to it.
+
+Did the same with the shopping list component.
+
+===========================================================================================
+
+                                  ***** FOLDER 15. *****
+                              15. Handling Forms in Angular Apps
+
+===========================================================================================
+
+15.1. Module Introduction
+: What we are required to learn in this part of the course regarding the forms.
+Generally submitting forms refreshes the page and sends data to the server but in angular there is no such thing as submitting.
+
+15.2. Why do we Need Angular's Help
+-- Explained us why actually we need angular.
+
+15.3. Template-Driven (TD) vs Reactive Approach
+-- Explained us what a template driven approach is and what a reactive approach.
+
+15.4. An Example Form
+-- Showed us the beginning form, default one.
+
+15.5. TD Creating the Form and Registering the Controls
+-- nothing special in this lecture.
+
+15.6. TD Submitting and Using the Form
+-- so we can use a local reference on the form equal to ngForm and then use it again as a js object with alot of key value properties available on it.
+
+15.7. TD Understanding Form State
+-- So we can use all the properties available on the form, as we want in our app.
+
+15.8. TD Accessing the Form with @ViewChild
+-- So we can use viewChild to look for the form also, and log it to the console.
+
+15.9. TD Adding Validation to check User Input
+-- We can use lots of form validators like email, etc/
+-- refer to this one : https://v17.angular.io/api/forms/Validators
+
+15.11. TD Using the Form State
+-- Learned about how we can set a local reference to a html element and then assign it to ng model and use it further to display text when requried.
+15.12. TD Outputting Validation Error Messages
+-- Learned about how we can set a local reference to a html element and then assign it to ng model and use it further to display text when requried.
+
+15.13. TD Set Default Values with ngModel Property Binding
+-- Learned about how we can set a local reference to a html element and then assign it to ng model and use it further to display text when requried.
+
+15.14. TD Using ngModel with Two-Way-Binding
+-- Learned about how we can set a local reference to a html element and then assign it to ng model and use it further to display text when requried.
+
+15.15. TD Grouping Form Controls
+-- So we can group form controls into a chunk and then use it to inform user.
+
+15.16. TD Handling Radio Buttons
+-- We can use radio buttons just like any other components in angular.
+
+15.17. TD Setting and Patching Form Values
+-- We can use set value and patch value to update the user input fields as we require.
+
+15.18. TD Using Form Data
+
+15.19
+So far what we learned in forms were template driven forms.
+
+---
+
+Reactive Forms
+
+---
+
+15.21. Introduction to the Reactive Approach
+Now we are going to learn reactive forms onwards from this point.
+
+15.22. Reactive Setup
+Creating a simple startup template for the reactive forms.
+WE just created a simple signupForm in our component.ts file.
+
+15.23. Reactive Creating a Form in Code
+-- Filling that with some code on ngOnInit( ) life cycle hook.
+-- created some formControls for the one that we require.
+ngOnInit(): void {
+this.signupForm = new FormGroup({
+username: new FormControl(null),
+email: new FormControl(null),
+gender: new FormControl('male'),
+});
+}
+
+15.24. Reactive Syncing HTML and Form
+-- We made the formGroup in the ts file work well in the html file by proving the formControlName, like this:
+formControlName="gender"
+
+15.25. Reactive Submitting the Form
+-- So made it submit using the ngSubmit with a function named onSubmit()
+
+15.26. Reactive Adding Validation
+-- We can use validator to actually validate the form using the reactive approach like this.
+email: new FormControl(null, [Validators.required, Validators.email]),
+
+15.27. Reactive Getting Access to Controls
+-- We can add help-block texts to actually mark which fields have incorrect data to them, then we can use
+
+input.ng-touched.ng-invalid {
+border: 1px solid rgb(255, 65, 65);
+}
+
+this css class to have a red border around that invalid input field.
+
+15.28. Reactive Grouping Controls
+-- So we can create subgroups in the ts file, and if so then we have to replicate the same structure in the html file.
+
+15.30. Reactive Arrays of Form Controls (FormArray)
+-- So we learned how we can dynamically get data from the user and use it in our form component.
+
+15.31. Reactive Creating Custom Validators
+-- To create custom validator all we have to do is to create a function and execute it on the validators array.
+
+forbiddenNames(control: FormControl): { [s: string]: boolean } | null {
+if (this.forbiddenUsernames.indexOf(control.value) >= 0) {
+return { nameIsForbidden: true }; // Return validation error object
+}
+return null; // Return null if valid
+}
+
+-- like this one in the username :
+
+    username: new FormControl(null, [
+          Validators.required,
+          this.forbiddenNames.bind(this),
+        ])
+
+15.32. Reactive Using Error Codes
+-- use this piece to actually check for the errors we might have with username issue.
+
+<span class="help-block"
+\*ngIf="signupForm.get('userData.username')?.invalid && signupForm.get('userData.username')?.touched">
+
+              <span *ngIf="signupForm.get('userData.username')?.errors?.['nameIsForbidden']">
+                This name is already taken.
+              </span>
+
+              <span *ngIf="signupForm.get('userData.username')?.errors?.['required']">
+                Please enter a value.
+              </span>
+
+            </span>
+
+-- So what we created was a normal validator which will validate from the info we provide what we actually want is to check that info from our server and then allow or not.
+
+15.33. Reactive Creating a Custom Async Validator
+== Thereby we need async validators.
 --
