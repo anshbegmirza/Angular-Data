@@ -2,3 +2,5 @@
 node_modules 
 vscode
 angular
+cache
+angular/cache

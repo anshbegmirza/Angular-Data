@@ -1,20 +1,26 @@
-=====================================================================================
+===========================================================================================
+
+Angular Test
+After folder - 3, 6, 8, 10, 14, 16, 17, 20
+===========================================================================================
+
+===========================================================================================
 
                                   ***** FOLDER 32 *****
                                          TypeScript
 
-=====================================================================================
+===========================================================================================
 
 Date 23 Jan 25
 Watched all the video and learned the basic of tsc
 how to specifiy types generics, interface and classes in tsc
 
-=====================================================================================
+===========================================================================================
 
                                   ***** FOLDER 1 *****
                                       Getting Started
 
-=====================================================================================
+===========================================================================================
 
 Date 23 Jan 25
 Watched video from 1 to 7.
@@ -47,12 +53,12 @@ Creatad a simple field which will take import and then display it on the screen.
 
 npm install --save bootstrap@3
 
-=====================================================================================
+===========================================================================================
 
                                   ***** FOLDER 2 *****
                                       The Basics
 
-=====================================================================================
+===========================================================================================
 
 Date 24 Jan 2025
 Watched videos from 1 to 13
@@ -170,12 +176,12 @@ and the serverStatus is the condition cherker.
 2.33. Getting the Index when using ngFor
 --Using two ngFor loops one to get the data, and the other to get the index.
 
-=====================================================================================
+===========================================================================================
 
                                   ***** FOLDER 3 *****
                                 Course Project - The Basics
 
-=====================================================================================
+===========================================================================================
 
 3.1.Project Introduction
 -- Understood what the project is all about.
@@ -218,4 +224,175 @@ and the serverStatus is the condition cherker.
 -- Created a simple model to store the ingredients data into it.
 
 3.15. Creating and Outputting the Shopping List
+-- Created a simple shopping list to out put to end user.
+
+3.16. Adding a Shopping List Edit Section
+-- Added a shopping list edit section to enable user to edit their app.
+
+3.17. Wrap Up & Next Steps
+-- Wrapped the course project for now and moved ahead.
+
+===========================================================================================
+
+                                  ***** FOLDER 4 *****
+                                        Debugging
+
+===========================================================================================
+
+4.1. Understanding Angular Error Messages
+-- Understanding what angular messages are and how to interpret them to solve errors in our application.
+
+4.2. Debugging Code in the Browser Using Sourcemaps
+-- Use source maps to debug the app code.
+
+4.3. Using Augury to Dive into Angular Apps
+-- We use a extension named augury to debug our applications.
+
+===========================================================================================
+
+                                  ***** FOLDER 5 *****
+                            Components & Databinding Deep Dive
+
+===========================================================================================
+
+5.66 - Module Introduction
+-- Introduction to what we are going to learn in this module.
+
+5.67 - Splitting Apps into Components
+-- Splited our app into two sections cockpit component and server Elements component.
+
+5.68 - Property Event Binding Overview
+-- Understanding what event binding is, and how we can event bind things from two different components.
+
+5.69 - Binding to Custom Properties
+-- Binded the server and cockpit together.
+
+5.70 - Assigning an Alias to Custom Properties
+-- In the @input we can add the alias name that we want.
+
+-- LIKE THIS :
+
+// srvElement is the alias name of the element which we will use outside this component to bind it to different things.
+
+5.71 - Binding to Custom Events
+-- Custom made events for our needs
+(serverCreated)="onServerAdded($event)"
+
+5.72 - Assigning an Alias to Custom Events
+-- Learned about component communication how different components interact with each other and how we can make them listen.
+
+5.73 - Custom Property and Event Binding Summary
+-- TO REVISE COMPONENT COMMUNICATION WATCH THIS LECTURE !
+
+5.74 - Understanding View Encapsulation
+-- Just knowing what encapsulation is.
+
+5.75. More on View Encapsulation
+-- Nothing much to leran from this video, although we can use something called encapsulation to inheirt components css properties.
+
+5.76 - Using Local References in Templates
+-- We can use local reference using # symbol and name of our choice.
+
+5.78 - Getting Access to the Template DOM with V
+-- Used local reference to get elements without using two way binding.
+
+5.79 - Projecting Content into Components with n
+-- Using ng-content we can get data from the children which we have created kind of.
+
+5.80 - Understanding the Component Lifecycle
+
+--ngOnChanges - Called after a bound input property changes.
+
+--ngOnInit - Called once the component is initialized.
+
+--ngDoCheck - Called during every change detection run.
+
+--ngAfterContentInit - Called after content(ng-content) has been project into view.
+
+--ngAfterViewInit - Called after the component's view (and child views) has been initialized.
+
+--ngAfterViewChecked - Called every time the view ( and child views) have been checked.
+
+--ngOnDestroy - Called once the component is about to be destroyed.
+
+5.81 - Seeing Lifecycle Hooks in Action
+
+5.82
+
+5.84
+
+5.85
+
+5.86
+-- Extra assignment solution covering everything that we need to learn in this folder.
+
+===========================================================================================
+
+                                  ***** FOLDER 6 *****
+                            Components & Databinding (Course Project)
+
+===========================================================================================
+
+--> Applying components & Databining in Course Project.
+
+6.1. Introduction
+-- We will create a working communication between our components that will make them work with each other in a much better way.
+
+6.2. Adding Navigation with Event Binding and ngIf
+-- Added navigation and event binding in the header navigation component.
+6.3. Passing Recipe Data with Property Binding
+
+-- So when I wanted to assign the recipe to the recipe model I created it told me that it cant be null , so use the below approach.
+
+    Recommended Approach:
+        The most common and recommended approach is using the non-null assertion operator (!) when you're sure the value will be provided by the parent component. This avoids unnecessary initialization and maintains type safety.
+
+6.4. Passing Data with Event and Property Binding (Combined)
+-- We passed the recipe list data from one component to another using local reference and view child, creating custom events and adding them to the other components.
+
+-- We use custom property binding and custom event binding to ensure that we are properly able to link components.
+
+6.6. Allowing the User to Add Ingredients to the Shopping List
+-- #Gold mine lecture
+-- Really nice leacture to revise viewchild and local refernce whenever stuck
+
+-->> This external lecture apart from the course is also really nice to revise view child in detail.
+LINK ||
+https://youtu.be/jWfNjNvUluA?si=5SjJDaHg_LA8LLAu
+
+===========================================================================================
+
+                                  ***** FOLDER 7 *****
+                                  Directives Deep Dive
+
+===========================================================================================
+
+7.1 Module Introduction
+-- Introduction to directives and Attribute and Structural Directives.
+-- Going to learn about more of Attribute Directives && Structural Directives.
+
+7.2. ngFor and ngIf Recap
+-- <li class="list-group-item" *ngFor="let number of numbers" *ngIf="number % 2 == 0">
+-- This wont work because we cant have more than one structural directive on 1 element.
+
+7.3. ngClass and ngStyle Recap
+-- Used ngClass and ngStyle to make the odd and even numbers look good.
+
+7.4. Creating a Basic Attribute Directive
+-- Created a basic highlight directive module which we can use whenever we want.
+
+7.5. Using the Renderer to build a Better Attribute Directive
+-- ng generate directive better-highlight
+-- ng g d better-highlight
+-- Learn more about angular renderer in this link
+https://v17.angular.io/api/core/Renderer2
+
+7.7. Using HostListener to Listen to Host Events
+-- Using hostlistener we can create interactive events subjected to specific styles.
+
+7.8. Using HostBinding to Bind to Host Properties
+-- Instead of using renderer we can creater a hostbinding of the specified property and then use it to change the style property of the dom whenever we need it to change.
+
+## 7.9. Binding to Directive Properties
+
 --
