@@ -393,6 +393,54 @@ https://v17.angular.io/api/core/Renderer2
 7.8. Using HostBinding to Bind to Host Properties
 -- Instead of using renderer we can creater a hostbinding of the specified property and then use it to change the style property of the dom whenever we need it to change.
 
-## 7.9. Binding to Directive Properties
+7.9. Binding to Directive Properties
 
+-- We can create custom binding properties and use them outside the directive.
+-- We can also assign custom alias name to it, and use it to access it.
+-- So far we have created attribute directives.
+
+7.10. What Happens behind the Scenes on Structural Directives
+-- SO the * actually transfer the *ngIf code to somewhat below code:
+
+    <ng-template [ngIf]="!onlyOdd">
+          <div>
+            <li class="list-group-item" *ngFor="let even of evenNumbers" [ngClass]="{odd: even % 2 !== 0 }"
+              [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}">
+              {{ even }}
+            </li>
+          </div>
+    </ng-template>
+
+-- Use the above code and compare it to the one with \*ngIf.
+
+7.11. Building a Structural Directive
+-- We can create our own structural directive to come up like unless
+
+-- a directive which is against the ngIf, completely opposite (checks / works for the false condition.)
+
+7.12. Understanding ngSwitch
+-- Works similarly to the switch case statement we have used so far in c language and in js.
+
+-- first we have to assign some value in the ts file
+-- then switch that value [ngSwitch]="value"
+-- using the \*ngSwitchCase="100"
+-- use this for Default \*ngSwitchDefault
+
+===========================================================================================
+
+                                  ***** FOLDER 8 *****
+                                 Course Project - Directives
+
+===========================================================================================
+8.1. Building and Using a Dropdown Directive
+-- Created a simple dropdown custom directive which will work as a directive.
+
+===========================================================================================
+
+                                  ***** FOLDER 9 *****
+                               Using Services & Dependency Injection
+
+===========================================================================================
+
+9.1. Module Introduction
 --
